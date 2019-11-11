@@ -1,4 +1,4 @@
-const {workers} = require('../models/index')
+const {workers} = require('../../models')
 const bcrypt = require('bcryptjs')
 const nodeMailer = require('nodemailer')
 const moment = require('moment')

@@ -22,7 +22,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     email_st: {
       type: DataTypes.INTEGER(1),
-      allowNull: true
+      allowNull: true,
+      defaultValue: '0'
     },
     email_token: {
       type: DataTypes.INTEGER(8).UNSIGNED,
@@ -40,6 +41,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(5).UNSIGNED,
       allowNull: true
     },
+    description: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
     website: {
       type: DataTypes.STRING(255),
       allowNull: true
@@ -47,6 +52,15 @@ module.exports = function(sequelize, DataTypes) {
     location: {
       type: DataTypes.JSON,
       allowNull: true
+    },
+    nohp: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    nohp_st: {
+      type: DataTypes.INTEGER(1),
+      allowNull: true,
+      defaultValue: '0'
     },
     createdAt: {
       type: DataTypes.DATE,

@@ -17,13 +17,22 @@ module.exports = {
         type: DataTypes.STRING,
         unique: true,
       },
-      email_st: DataTypes.BOOLEAN,
+      email_st: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
       email_token: DataTypes.MEDIUMINT.UNSIGNED,
       email_expire_token: DataTypes.DATE,
       profile_picture: DataTypes.STRING,
       rating: DataTypes.SMALLINT.UNSIGNED,
+      description: DataTypes.STRING,
       website: DataTypes.STRING,
       location: DataTypes.JSON,
+      nohp: DataTypes.STRING,
+      nohp_st: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
     })
