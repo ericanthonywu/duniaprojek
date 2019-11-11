@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: true
     },
+    type: {
+      type: DataTypes.BIGINT,
+      allowNull: true
+    },
     description: {
       type: DataTypes.STRING(255),
       allowNull: true
@@ -32,10 +36,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
-    created_at: {
+    created_by: {
+      type: DataTypes.BIGINT,
+      allowNull: true
+    },
+    createdAt: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
   }, {
     tableName: 'projects'

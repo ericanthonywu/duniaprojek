@@ -6,7 +6,8 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 require('dotenv').config({path: '.env'})
 
-const indexRouter = require('./routes/index');
+const freelancerRouter = require('./routes/freelancer');
+const ownerRouter = require('./routes/freelancer');
 
 const app = express();
 
@@ -22,7 +23,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', indexRouter);
+app.use('/freelancer', freelancerRouter);
+app.use('/owner', ownerRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

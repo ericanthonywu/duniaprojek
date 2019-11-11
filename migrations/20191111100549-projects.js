@@ -13,12 +13,12 @@ module.exports = {
             },
             name: DataTypes.STRING,
             type: {
-            type: DataTypes.BIGINT.UNSIGNED,
-                references: {
-                model: 'projectsType',
-                    key: 'id'
+                type: DataTypes.BIGINT.UNSIGNED,
+                // references: {
+                //     model: 'projectsType',
+                //     key: 'id'
+                // },
             },
-        },
             description: DataTypes.STRING,
             deadline: DataTypes.DATE,
             weekly_report: DataTypes.BOOLEAN,
@@ -29,15 +29,13 @@ module.exports = {
             published_budget: DataTypes.INTEGER,
             created_by: {
                 type: DataTypes.BIGINT.UNSIGNED,
-                references: {
-                    model: 'user',
-                    key: 'id'
-                },
+                // references: {
+                //     model: 'user',
+                //     key: 'id'
+                // },
             },
-            created_at: {
-                type: DataTypes.DATE,
-                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-            }
+            createdAt: DataTypes.DATE,
+            updatedAt: DataTypes.DATE,
         })
     },
 

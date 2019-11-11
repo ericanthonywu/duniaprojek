@@ -27,10 +27,8 @@ module.exports = {
             },
             message: DataTypes.BIGINT.UNSIGNED,
             read: DataTypes.BOOLEAN,
-            created_at: {
-                type: DataTypes.DATE,
-                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-            }
+            createdAt: DataTypes.DATE,
+            updatedAt: DataTypes.DATE,
         })
     },
 

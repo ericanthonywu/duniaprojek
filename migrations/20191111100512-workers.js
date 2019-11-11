@@ -17,7 +17,10 @@ module.exports = {
                 type: DataTypes.STRING,
                 unique: true,
             },
-            email_st: DataTypes.BOOLEAN,
+            email_st: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             email_token: DataTypes.MEDIUMINT.UNSIGNED,
             email_expire_token: DataTypes.DATE,
             profile_picture: DataTypes.STRING,
@@ -25,10 +28,13 @@ module.exports = {
             description: DataTypes.STRING,
             website: DataTypes.STRING,
             location: DataTypes.JSON,
-            created_at: {
-                type: DataTypes.DATE,
-                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-            }
+            nohp: DataTypes.STRING,
+            nohp_st: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            createdAt: DataTypes.DATE,
+            updatedAt: DataTypes.DATE,
         })
     },
 

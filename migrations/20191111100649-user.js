@@ -24,10 +24,8 @@ module.exports = {
       rating: DataTypes.SMALLINT.UNSIGNED,
       website: DataTypes.STRING,
       location: DataTypes.JSON,
-      created_at: {
-        type: DataTypes.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      }
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE,
     })
   },
 
