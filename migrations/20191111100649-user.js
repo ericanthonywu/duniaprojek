@@ -27,7 +27,7 @@ module.exports = {
       rating: DataTypes.SMALLINT.UNSIGNED,
       description: DataTypes.STRING,
       website: DataTypes.STRING,
-      location: DataTypes.JSON,
+      location: DataTypes.STRING,
       nohp: DataTypes.STRING,
       nohp_st: {
         type: DataTypes.BOOLEAN,

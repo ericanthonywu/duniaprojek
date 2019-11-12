@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     username: {
       type: DataTypes.STRING(255),
@@ -50,7 +51,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     location: {
-      type: DataTypes.JSON,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     nohp: {
