@@ -4,18 +4,27 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const io = require('socketio')()
 require('dotenv').config({path: '.env'})
 
 const freelancerRouter = require('./routes/freelancer');
 const ownerRouter = require('./routes/owner');
 const adminRouter = require('./routes/admin');
+const cors = require("cors");
+app.io = io
 
 const app = express();
+
+app.use((req, res, next) => {
+    req.io = io
+    next()
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
